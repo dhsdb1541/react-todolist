@@ -48,19 +48,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Todo-List</h1>
+        <h1 className="todo-title">Todo-List</h1>
         <form className="form-wrapper">
-          <p>할일:</p> <input name="todoa" onChange={this.handleChange} placeholder="할일을 작성하세요" />
-          <button onClick={this.handleClick}>제출하기</button>
+          <input className="form-input" name="todoa" onChange={this.handleChange} placeholder="할일을 작성하세요" />
+          <button className="form-button" onClick={this.handleClick}>
+            제출하기
+          </button>
         </form>
-        {this.state.todos.map(item => (
-          <div key={item._id}>
-            {item.todo}
-            <button id={item._id} onClick={this.handleRemove}>
-              x
-            </button>
-          </div>
-        ))}
+        <ul className="todo-wrapper">
+          {this.state.todos.map(item => (
+            <li className="todo-list" key={item._id}>
+              {item.todo}
+              <button id={item._id} onClick={this.handleRemove}>
+                x
+              </button>
+            </li>
+          ))}
+        </ul>
       </div>
     );
   }
