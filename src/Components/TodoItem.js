@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 
 export default class TodoItem extends Component {
   render() {
+    const { info, onRemove } = this.props;
     return (
-      <ul>
-        <li>{this.props.todo}</li>
-      </ul>
+      <div key={info._id}>
+        {info.todo}
+        <button id={info._id} onRemove={onRemove}>
+          x
+        </button>
+      </div>
     );
   }
 }

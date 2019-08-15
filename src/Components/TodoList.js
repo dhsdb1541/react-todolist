@@ -28,8 +28,8 @@ export default class TodoList extends Component {
     const { todo } = this.props;
     return (
       <div>
-        {this.state.todo.map(({ todo }) => (
-          <TodoItem todo={todo} />
+        {this.state.todo.map(({ todo, handleRemove }) => (
+          // <TodoItem todo={todo} />
         ))}
       </div>
     );
